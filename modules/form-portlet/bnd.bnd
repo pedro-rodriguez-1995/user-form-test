@@ -1,4 +1,0 @@
-Bundle-Name: form-portlet
-Bundle-SymbolicName: com.test.form
-Bundle-Version: 1.0.0
-Export-Package: com.test.form.constants

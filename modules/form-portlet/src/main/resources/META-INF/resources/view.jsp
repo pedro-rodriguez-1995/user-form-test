@@ -25,7 +25,7 @@
 			    		
 		            </aui:input>
 			    	<aui:input  type="email" name="formUserEmail" required="true" style="background: white">
-			    		<aui:validator name="maxLength">20</aui:validator>
+			    		<aui:validator name="maxLength">40</aui:validator>
 		            </aui:input>
 		<liferay-captcha:captcha  url="<%= captchaResourceURL %>"/>
 		        </aui:fieldset>

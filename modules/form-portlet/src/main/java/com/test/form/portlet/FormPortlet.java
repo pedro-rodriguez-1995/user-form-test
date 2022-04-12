@@ -11,7 +11,8 @@ import com.liferay.portal.kernel.util.ParamUtil;
 import com.test.form.constants.FormPortletKeys;
 import com.test.userfsb.service.UserfLocalServiceUtil;
 
-import java.text.DateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 
 import javax.mail.internet.AddressException;
@@ -40,7 +41,10 @@ public class FormPortlet extends MVCPortlet {
 		String name = ParamUtil.getString(request, "formUserName");
 		String surname = ParamUtil.getString(request, "formUserSurname");
 		String email = ParamUtil.getString(request, "formUserEmail");
-		Date birthdate = ParamUtil.getDate(request, "formUserDate", DateFormat.getDateInstance());
+
+		String sdate = ParamUtil.getString(request, "formUserDate");
+		LocalDate ldate = LocalDate.parse(sdate);
+		Date birthdate = Date.from(ldate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
 		Date creationdate = new Date();
 
 		try {

@@ -1,0 +1,11 @@
+dependencies {
+	compile project(":modules:userf-sb:userf-sb-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+}
+
+buildService {
+	apiDir = "../userf-sb-api/src/main/java"
+}
+
+group = "com.test.userfsb"

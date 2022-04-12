@@ -4,18 +4,16 @@
 <%@ page import="com.liferay.portal.kernel.captcha.CaptchaTextException"%>
 
     	
-	<portlet:actionURL name="addUser" var="addUser" />
+	<portlet:actionURL name="addUserf" var="addUserf" />
 	<portlet:resourceURL id="captcha" var="captchaResourceURL"/>
 
-	<liferay-ui:success  key="user-success"/>
-	<liferay-ui:error  key="user-error" />
-	<liferay-ui:error
-    exception="<%= CaptchaTextException.class %>"
-    message="captcha-verification-failed" />
+	<liferay-ui:success  key="save-success"/>
+	<liferay-ui:error  key="save-error" />
+
 	
     <div>
     	<h3><liferay-ui:message key="form-title" /></h3>
-		<aui:form action="<%= addUser %>" id="frmUser" name="<portlet:namespace />fm">	
+		<aui:form action="<%= addUserf %>" id="frmUser" name="<portlet:namespace />fm">	
 		        <aui:fieldset>	
 		            <aui:input type="text" name="formUserName" required="true" style="background: white" >
 		            	<aui:validator name="maxLength">20</aui:validator>
@@ -29,7 +27,7 @@
 			    	<aui:input  type="email" name="formUserEmail" required="true" style="background: white">
 			    		<aui:validator name="maxLength">20</aui:validator>
 		            </aui:input>
-		<liferay-captcha:captcha url="<%= captchaResourceURL %>"/>
+		<liferay-captcha:captcha  url="<%= captchaResourceURL %>"/>
 		        </aui:fieldset>
 		
 		        <aui:button-row>

@@ -1,0 +1,10 @@
+Bundle-Name: userf-sb-api
+Bundle-SymbolicName: com.test.userfsb.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.test.userfsb.exception,\
+	com.test.userfsb.model,\
+	com.test.userfsb.service,\
+	com.test.userfsb.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../userf-sb-service/service.xml

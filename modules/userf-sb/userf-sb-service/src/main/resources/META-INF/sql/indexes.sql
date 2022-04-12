@@ -1,0 +1,1 @@
+create index IX_8C484297 on Userf_Userf (uuid_[$COLUMN_LENGTH:75$]);

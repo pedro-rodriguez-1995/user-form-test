@@ -257,6 +257,8 @@ public interface UserfLocalService
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public int getUserfsCount();
 
+	public List<Userf> listUserf();
+
 	/**
 	 * Updates the userf in the database or adds it if it does not yet exist. Also notifies the appropriate model listeners.
 	 *

@@ -7,13 +7,17 @@ import com.liferay.portal.kernel.captcha.CaptchaException;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
+import com.liferay.portal.kernel.theme.ThemeDisplay;
 import com.liferay.portal.kernel.util.ParamUtil;
+import com.liferay.portal.kernel.util.WebKeys;
 import com.test.form.constants.FormPortletKeys;
+import com.test.userfsb.model.Userf;
 import com.test.userfsb.service.UserfLocalServiceUtil;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.List;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
@@ -57,6 +61,15 @@ public class FormPortlet extends MVCPortlet {
 
 			SessionErrors.add(request, "save-error");
 		}
+
+	}
+
+	@ProcessAction(name = "listUserf")
+	public void listUserf(ActionRequest request, ActionResponse response) {
+		ThemeDisplay td = (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);
+		List<Userf> userlist = UserfLocalServiceUtil.listUserf();
+
+		request.getPortletSession().setAttribute("userlist", userlist);
 
 	}
 

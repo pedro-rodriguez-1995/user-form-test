@@ -15,10 +15,13 @@
 package com.test.userfsb.service.impl;
 
 import com.liferay.portal.aop.AopService;
+import com.liferay.portal.kernel.dao.orm.QueryUtil;
 import com.test.userfsb.model.Userf;
+import com.test.userfsb.model.impl.UserfImpl;
 import com.test.userfsb.service.base.UserfLocalServiceBaseImpl;
 
 import java.util.Date;
+import java.util.List;
 
 import org.osgi.service.component.annotations.Component;
 
@@ -43,7 +46,7 @@ import org.osgi.service.component.annotations.Component;
 public class UserfLocalServiceImpl extends UserfLocalServiceBaseImpl {
 
 	public Userf addUserf(String name, String surname, String email, Date birthdate, Date creationdate) {
-		Userf userf = new com.test.userfsb.model.impl.UserfImpl();
+		Userf userf = new UserfImpl();
 		userf.setName(name);
 		userf.setSurname(surname);
 		userf.setEmail(email);
@@ -55,6 +58,11 @@ public class UserfLocalServiceImpl extends UserfLocalServiceBaseImpl {
 		userf.setId(userid);
 
 		return addUserf(userf);
+	}
+
+	public List<Userf> listUserf() {
+
+		return getUserfs(QueryUtil.ALL_POS, QueryUtil.ALL_POS);
 	}
 
 	/*

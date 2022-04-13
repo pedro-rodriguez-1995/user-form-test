@@ -281,6 +281,10 @@ public class UserfLocalServiceUtil {
 		return getService().getUserfsCount();
 	}
 
+	public static List<Userf> listUserf() {
+		return getService().listUserf();
+	}
+
 	/**
 	 * Updates the userf in the database or adds it if it does not yet exist. Also notifies the appropriate model listeners.
 	 *

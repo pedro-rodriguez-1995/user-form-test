@@ -307,6 +307,11 @@ public class UserfLocalServiceWrapper
 		return _userfLocalService.getUserfsCount();
 	}
 
+	@Override
+	public java.util.List<com.test.userfsb.model.Userf> listUserf() {
+		return _userfLocalService.listUserf();
+	}
+
 	/**
 	 * Updates the userf in the database or adds it if it does not yet exist. Also notifies the appropriate model listeners.
 	 *
